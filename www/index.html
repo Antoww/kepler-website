@@ -8,16 +8,47 @@
   </head>
   <body>
     <h1>Keplerr Bot</h1>
-    <h2>Un super bot Discord</h2>
-    <p>Keplerr Bot est un bot Discord développé avec <a href="https://discord.js.org/docs/packages/discord.js/14.17.3" title="DiscordJS" target="_blank">DiscordJS</a>. 
+    <p>Keplerr Bot est un bot Discord <strong>développé</strong> avec <a href="https://discord.js.org/docs/packages/discord.js/14.17.3" title="DiscordJS" target="_blank">DiscordJS</a>. 
         Il est développé par <a href="https://github.com/Antoww" title="Github de Antow" target="_blank">Antow</a>.</p>
-    <img src="https://cdn.discordapp.com/attachments/503313393709613057/1330613157663871118/sepia.png?ex=678e9d92&is=678d4c12&hm=86fc46a98e74fdf86044599c793c7088fe7e6db32fe707ffc24597309ab7b01e&"/>
+    <img src="https://cdn.discordapp.com/attachments/503313393709613057/1330613157663871118/sepia.png?ex=678e9d92&is=678d4c12&hm=86fc46a98e74fdf86044599c793c7088fe7e6db32fe707ffc24597309ab7b01e&" alt="Visage Ayfri avec un filtre sepia"/>
 
     <p style="font-size: 1.5em;">
         Le bot propose :
-        <span>Des commandes Tech</span>
-        <span>Des commandes Fun</span>
-        <span>Des commandes Modération</span>
+        
+        <ul>
+            <li>Des commandes de modération</li>
+            <li>Des commandes de fun</li>
+            <li>Des commandes d'utilité</li>
+            <li>Des commandes de musique</li>
+            <li>Des commandes de configuration</li>
+        </ul>
     </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Commandes</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>!help</td>
+          <td>Permet d'afficher la liste des commandes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form action="/submit" method="post">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="text">Texte</label>
+      <input type="text" id="text" name="text" required>
+      <button type="submit">Envoyer</button>
+
+    <footer>
+      <p>Keplerr Bot - 2021</p>
+    </footer>
+
   </body>
 </html>
