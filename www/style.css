@@ -10,5 +10,59 @@ body {
     padding: 0;
     font-size: 16px;
     line-height: 1.5;
-    color: #333;
+    color: #ffffff;
 }
+
+h1 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    background-color: #0a0606;
+    color: #ffffff;
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+td {
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #0a0606;
+}
+
+tr:nth-child(odd) {
+    background-color: #0a0606;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"] {
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+input[type="submit"] {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    background-color: #0a0606;
+    color: #ffffff;
+    border: 1px solid black;
+}
+
