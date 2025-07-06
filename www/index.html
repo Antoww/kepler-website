@@ -4,57 +4,402 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <title>Keplerr Bot</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Keplerr Bot - Bot Discord Moderne</title>
+  <meta name="description" content="Keplerr Bot - Un bot Discord moderne avec des commandes de modération, musique, fun et utilitaires">
 </head>
 <body>
-  <header>
-    <h1>Keplerr Bot</h1>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/favicon.png" alt="Keplerr Bot Logo" class="logo-img">
+        <span>Keplerr Bot</span>
+      </div>
+      <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#commandes">Commandes</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Keplerr Bot</h1>
+        <p class="hero-subtitle">Un bot Discord moderne et polyvalent</p>
+        <p class="hero-description">
+          Développé avec <a href="https://discord.js.org/docs/packages/discord.js/14.17.3" target="_blank" rel="noopener">DiscordJS</a> 
+          par <a href="https://github.com/Antoww" target="_blank" rel="noopener">Antow</a>
+        </p>
+        <div class="hero-buttons">
+          <a href="#commandes" class="btn btn-primary">Voir les commandes</a>
+          <a href="#" class="btn btn-secondary">Inviter le bot</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://cdn.discordapp.com/attachments/503313393709613057/1330613157663871118/sepia.png?ex=678e9d92&is=678d4c12&hm=86fc46a98e74fdf86044599c793c7088fe7e6db32fe707ffc24597309ab7b01e&" alt="Keplerr Bot" />
+      </div>
+    </div>
   </header>
 
   <main>
-    <p>Keplerr Bot est un bot Discord <strong>développé</strong> avec
-      <a href="https://discord.js.org/docs/packages/discord.js/14.17.3" title="DiscordJS" target="_blank">DiscordJS</a>.
-      Il est développé par <a href="https://github.com/Antoww" title="Github de Antow" target="_blank">Antow</a>.
-    </p>
-    <img src="https://cdn.discordapp.com/attachments/503313393709613057/1330613157663871118/sepia.png?ex=678e9d92&is=678d4c12&hm=86fc46a98e74fdf86044599c793c7088fe7e6db32fe707ffc24597309ab7b01e&" alt="Visage Ayfri avec un filtre sepia" />
+    <section class="features-section">
+      <div class="container">
+        <h2>Fonctionnalités</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Modération</h3>
+            <p>Commandes de modération avancées pour gérer votre serveur</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3>Musique</h3>
+            <p>Écoutez de la musique directement dans vos salons vocaux</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎮</div>
+            <h3>Fun</h3>
+            <p>Commandes amusantes pour animer votre communauté</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Utilitaires</h3>
+            <p>Outils pratiques pour améliorer l'expérience utilisateur</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Configuration</h3>
+            <p>Personnalisez le bot selon vos besoins</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Statistiques</h3>
+            <p>Suivez l'activité de votre serveur</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="features">
-      <p>Le bot propose :</p>
-      <ul>
-        <li>Des commandes de modération</li>
-        <li>Des commandes de fun</li>
-        <li>Des commandes d'utilité</li>
-        <li>Des commandes de musique</li>
-        <li>Des commandes de configuration</li>
-      </ul>
-    </div>
+    <section class="commands-section" id="commandes">
+      <div class="container">
+        <h2>Commandes du Bot</h2>
+        
+        <div class="commands-categories">
+          <!-- Modération -->
+          <div class="command-category">
+            <h3>🛡️ Modération</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/ban</span>
+                  <span class="command-permission">BAN_MEMBERS</span>
+                </div>
+                <p class="command-description">Bannir un utilisateur du serveur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /ban @utilisateur [raison]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/kick</span>
+                  <span class="command-permission">KICK_MEMBERS</span>
+                </div>
+                <p class="command-description">Expulser un utilisateur du serveur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /kick @utilisateur [raison]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/mute</span>
+                  <span class="command-permission">MODERATE_MEMBERS</span>
+                </div>
+                <p class="command-description">Rendre muet un utilisateur temporairement</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /mute @utilisateur [durée] [raison]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/clear</span>
+                  <span class="command-permission">MANAGE_MESSAGES</span>
+                </div>
+                <p class="command-description">Supprimer un nombre de messages</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /clear [nombre]
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Commandes</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>!help</td>
-          <td>Permet d'afficher la liste des commandes</td>
-        </tr>
-      </tbody>
-    </table>
+          <!-- Musique -->
+          <div class="command-category">
+            <h3>🎵 Musique</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/play</span>
+                  <span class="command-permission">CONNECT</span>
+                </div>
+                <p class="command-description">Jouer une musique depuis YouTube</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /play [recherche ou URL]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/skip</span>
+                  <span class="command-permission">CONNECT</span>
+                </div>
+                <p class="command-description">Passer à la musique suivante</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /skip
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/stop</span>
+                  <span class="command-permission">CONNECT</span>
+                </div>
+                <p class="command-description">Arrêter la musique et vider la queue</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /stop
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/queue</span>
+                  <span class="command-permission">CONNECT</span>
+                </div>
+                <p class="command-description">Afficher la liste de lecture</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /queue
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <form action="/submit" method="post">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      <label for="text">Texte</label>
-      <input type="text" id="text" name="text" required>
-      <button type="submit">Envoyer</button>
-    </form>
+          <!-- Fun -->
+          <div class="command-category">
+            <h3>🎮 Fun</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/meme</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher un meme aléatoire</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /meme
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/8ball</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Poser une question à la boule de cristal</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /8ball [question]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/coinflip</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Lancer une pièce</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /coinflip
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/dice</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Lancer un dé</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /dice [nombre de faces]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Utilitaires -->
+          <div class="command-category">
+            <h3>⚙️ Utilitaires</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/help</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher la liste des commandes</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /help [commande]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/ping</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher la latence du bot</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /ping
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/userinfo</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les informations d'un utilisateur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /userinfo [@utilisateur]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/serverinfo</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les informations du serveur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /serverinfo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration -->
+          <div class="command-category">
+            <h3>🔧 Configuration</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/prefix</span>
+                  <span class="command-permission">ADMINISTRATOR</span>
+                </div>
+                <p class="command-description">Changer le préfixe du bot</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /prefix [nouveau_préfixe]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/welcome</span>
+                  <span class="command-permission">MANAGE_GUILD</span>
+                </div>
+                <p class="command-description">Configurer le message de bienvenue</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /welcome [salon] [message]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/autorole</span>
+                  <span class="command-permission">MANAGE_ROLES</span>
+                </div>
+                <p class="command-description">Définir un rôle automatique</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /autorole [@rôle]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/logs</span>
+                  <span class="command-permission">MANAGE_GUILD</span>
+                </div>
+                <p class="command-description">Configurer les logs de modération</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /logs [salon]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Besoin d'aide ?</h3>
+            <p>N'hésitez pas à nous contacter pour toute question concernant Keplerr Bot.</p>
+            <div class="contact-links">
+              <a href="https://github.com/Antoww" target="_blank" rel="noopener" class="contact-link">
+                <span>👨‍💻</span> GitHub
+              </a>
+              <a href="#" class="contact-link">
+                <span>📧</span> Email
+              </a>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>Keplerr Bot - 2021</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Keplerr Bot</h4>
+          <p>Un bot Discord moderne et polyvalent pour votre serveur.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#commandes">Commandes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Développeur</h4>
+          <p>Développé avec ❤️ par <a href="https://github.com/Antoww" target="_blank" rel="noopener">Antow</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Keplerr Bot. Tous droits réservés.</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
