@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/webp" href="images/favicon.webp">
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
   <title>Keplerr Bot - Bot Discord Moderne</title>
   <meta name="description" content="Keplerr Bot - Un bot Discord moderne avec des commandes de modération, musique, fun et utilitaires">
 </head>
@@ -12,7 +12,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <img src="images/favicon.webp" alt="Keplerr Bot Logo" class="logo-img">
+        <img src="images/favicon.ico" alt="Keplerr Bot Logo" class="logo-img">
         <span>Keplerr Bot</span>
       </div>
       <div class="nav-links">
@@ -51,32 +51,32 @@
           <div class="feature-card">
             <div class="feature-icon">🛡️</div>
             <h3>Modération</h3>
-            <p>Commandes de modération avancées pour gérer votre serveur</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎵</div>
-            <h3>Musique</h3>
-            <p>Écoutez de la musique directement dans vos salons vocaux</p>
+            <p>Commandes de modération pour gérer efficacement votre serveur</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🎮</div>
-            <h3>Fun</h3>
+            <h3>Fun & Divertissement</h3>
             <p>Commandes amusantes pour animer votre communauté</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">⚙️</div>
             <h3>Utilitaires</h3>
-            <p>Outils pratiques pour améliorer l'expérience utilisateur</p>
+            <p>Outils pratiques pour obtenir des informations détaillées</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🔧</div>
+            <h3>Outils & Génération</h3>
+            <p>Générateurs de mots de passe, rappels et outils spécialisés</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
             <h3>Configuration</h3>
             <p>Personnalisez le bot selon vos besoins</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Statistiques</h3>
-            <p>Suivez l'activité de votre serveur</p>
+            <div class="feature-icon">🎯</div>
+            <h3>Gaming</h3>
+            <p>Intégrations avec Minecraft et World of Warcraft</p>
           </div>
         </div>
       </div>
@@ -93,115 +93,32 @@
             <div class="commands-grid">
               <div class="command-card">
                 <div class="command-header">
-                  <span class="command-name">/ban</span>
-                  <span class="command-permission">BAN_MEMBERS</span>
-                </div>
-                <p class="command-description">Bannir un utilisateur du serveur</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /ban @utilisateur [raison]
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/kick</span>
-                  <span class="command-permission">KICK_MEMBERS</span>
-                </div>
-                <p class="command-description">Expulser un utilisateur du serveur</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /kick @utilisateur [raison]
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/mute</span>
-                  <span class="command-permission">MODERATE_MEMBERS</span>
-                </div>
-                <p class="command-description">Rendre muet un utilisateur temporairement</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /mute @utilisateur [durée] [raison]
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
                   <span class="command-name">/clear</span>
                   <span class="command-permission">MANAGE_MESSAGES</span>
                 </div>
-                <p class="command-description">Supprimer un nombre de messages</p>
+                <p class="command-description">Supprimer un nombre de messages dans le salon</p>
                 <div class="command-usage">
                   <strong>Usage:</strong> /clear [nombre]
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Musique -->
-          <div class="command-category">
-            <h3>🎵 Musique</h3>
-            <div class="commands-grid">
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/play</span>
-                  <span class="command-permission">CONNECT</span>
-                </div>
-                <p class="command-description">Jouer une musique depuis YouTube</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /play [recherche ou URL]
-                </div>
-              </div>
               
               <div class="command-card">
                 <div class="command-header">
-                  <span class="command-name">/skip</span>
-                  <span class="command-permission">CONNECT</span>
+                  <span class="command-name">/annonce</span>
+                  <span class="command-permission">MANAGE_MESSAGES</span>
                 </div>
-                <p class="command-description">Passer à la musique suivante</p>
+                <p class="command-description">Créer une annonce dans le serveur</p>
                 <div class="command-usage">
-                  <strong>Usage:</strong> /skip
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/stop</span>
-                  <span class="command-permission">CONNECT</span>
-                </div>
-                <p class="command-description">Arrêter la musique et vider la queue</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /stop
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/queue</span>
-                  <span class="command-permission">CONNECT</span>
-                </div>
-                <p class="command-description">Afficher la liste de lecture</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /queue
+                  <strong>Usage:</strong> /annonce [message]
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Fun -->
+          <!-- Fun & Divertissement -->
           <div class="command-category">
-            <h3>🎮 Fun</h3>
+            <h3>🎮 Fun & Divertissement</h3>
             <div class="commands-grid">
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/meme</span>
-                  <span class="command-permission">SEND_MESSAGES</span>
-                </div>
-                <p class="command-description">Afficher un meme aléatoire</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /meme
-                </div>
-              </div>
-              
               <div class="command-card">
                 <div class="command-header">
                   <span class="command-name">/8ball</span>
@@ -218,7 +135,7 @@
                   <span class="command-name">/coinflip</span>
                   <span class="command-permission">SEND_MESSAGES</span>
                 </div>
-                <p class="command-description">Lancer une pièce</p>
+                <p class="command-description">Lancer une pièce (pile ou face)</p>
                 <div class="command-usage">
                   <strong>Usage:</strong> /coinflip
                 </div>
@@ -226,12 +143,34 @@
               
               <div class="command-card">
                 <div class="command-header">
-                  <span class="command-name">/dice</span>
+                  <span class="command-name">/meme</span>
                   <span class="command-permission">SEND_MESSAGES</span>
                 </div>
-                <p class="command-description">Lancer un dé</p>
+                <p class="command-description">Afficher un meme aléatoire depuis Reddit</p>
                 <div class="command-usage">
-                  <strong>Usage:</strong> /dice [nombre de faces]
+                  <strong>Usage:</strong> /meme
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/golem</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Générer une image de golem aléatoire</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /golem
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/birthday</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Souhaiter un joyeux anniversaire</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /birthday [@utilisateur]
                 </div>
               </div>
             </div>
@@ -241,17 +180,6 @@
           <div class="command-category">
             <h3>⚙️ Utilitaires</h3>
             <div class="commands-grid">
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/help</span>
-                  <span class="command-permission">SEND_MESSAGES</span>
-                </div>
-                <p class="command-description">Afficher la liste des commandes</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /help [commande]
-                </div>
-              </div>
-              
               <div class="command-card">
                 <div class="command-header">
                   <span class="command-name">/ping</span>
@@ -284,54 +212,148 @@
                   <strong>Usage:</strong> /serverinfo
                 </div>
               </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/channelinfo</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les informations d'un salon</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /channelinfo [#salon]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/roleinfo</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les informations d'un rôle</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /roleinfo [@rôle]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/rolelist</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher la liste des rôles du serveur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /rolelist
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/whois</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher des informations détaillées sur un utilisateur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /whois [@utilisateur]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/stats</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les statistiques du serveur</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /stats
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/status</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher le statut du bot</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /status
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outils & Génération -->
+          <div class="command-category">
+            <h3>🔧 Outils & Génération</h3>
+            <div class="commands-grid">
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/genpass</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Générer un mot de passe sécurisé</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /genpass [longueur]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/reminder</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Créer un rappel personnalisé</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /reminder [temps] [message]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/minecraft-uuid</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Rechercher l'UUID d'un joueur Minecraft</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /minecraft-uuid [pseudo]
+                </div>
+              </div>
+              
+              <div class="command-card">
+                <div class="command-header">
+                  <span class="command-name">/wowguilde</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
+                </div>
+                <p class="command-description">Afficher les informations d'une guilde World of Warcraft</p>
+                <div class="command-usage">
+                  <strong>Usage:</strong> /wowguilde [nom_guilde] [serveur]
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Configuration -->
           <div class="command-category">
-            <h3>🔧 Configuration</h3>
+            <h3>⚙️ Configuration</h3>
             <div class="commands-grid">
               <div class="command-card">
                 <div class="command-header">
-                  <span class="command-name">/prefix</span>
+                  <span class="command-name">/config</span>
                   <span class="command-permission">ADMINISTRATOR</span>
                 </div>
-                <p class="command-description">Changer le préfixe du bot</p>
+                <p class="command-description">Configurer les paramètres du bot</p>
                 <div class="command-usage">
-                  <strong>Usage:</strong> /prefix [nouveau_préfixe]
+                  <strong>Usage:</strong> /config [option] [valeur]
                 </div>
               </div>
               
               <div class="command-card">
                 <div class="command-header">
-                  <span class="command-name">/welcome</span>
-                  <span class="command-permission">MANAGE_GUILD</span>
+                  <span class="command-name">/credits</span>
+                  <span class="command-permission">SEND_MESSAGES</span>
                 </div>
-                <p class="command-description">Configurer le message de bienvenue</p>
+                <p class="command-description">Afficher les crédits et informations du bot</p>
                 <div class="command-usage">
-                  <strong>Usage:</strong> /welcome [salon] [message]
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/autorole</span>
-                  <span class="command-permission">MANAGE_ROLES</span>
-                </div>
-                <p class="command-description">Définir un rôle automatique</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /autorole [@rôle]
-                </div>
-              </div>
-              
-              <div class="command-card">
-                <div class="command-header">
-                  <span class="command-name">/logs</span>
-                  <span class="command-permission">MANAGE_GUILD</span>
-                </div>
-                <p class="command-description">Configurer les logs de modération</p>
-                <div class="command-usage">
-                  <strong>Usage:</strong> /logs [salon]
+                  <strong>Usage:</strong> /credits
                 </div>
               </div>
             </div>
@@ -403,3 +425,4 @@
   </footer>
 </body>
 </html>
+
