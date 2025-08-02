@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Kepler Bot - Guide Complet</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour la documentation */
+        .doc-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .doc-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .doc-nav {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        .doc-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .doc-nav li a {
+            display: block;
+            padding: 8px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .doc-nav li a:hover {
+            background: #0056b3;
+        }
+        
+        .doc-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .doc-section h2 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .doc-section h3 {
+            color: #495057;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .command-table th,
+        .command-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .command-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .command-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .doc-nav ul {
+                flex-direction: column;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <header class="doc-header">
+            <h1>🚀 Documentation Kepler Bot</h1>
+            <p>Guide complet d'utilisation et de configuration</p>
+            <p><strong>Version Beta - Été 2025</strong></p>
+        </header>
+
+        <nav class="doc-nav">
+            <ul>
+                <li><a href="#overview">Vue d'ensemble</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#moderation">Modération</a></li>
+                <li><a href="#administration">Administration</a></li>
+                <li><a href="#utilitaires">Utilitaires</a></li>
+                <li><a href="#jeux">Jeux</a></li>
+                <li><a href="#anniversaires">Anniversaires</a></li>
+                <li><a href="#logs">Logs</a></li>
+                <li><a href="#techniques">Informations Techniques</a></li>
+            </ul>
+        </nav>
+
+        <section id="overview" class="doc-section">
+            <h2>🌟 Vue d'ensemble</h2>
+            
+            <div class="warning">
+                <strong>⚠️ Avertissement :</strong> Kepler est actuellement en version Beta. Des instabilités et des redémarrages intempestifs sont à prévoir !
+            </div>
+
+            <p>Kepler est un bot Discord polyvalent développé en TypeScript avec Deno, conçu pour enrichir vos serveurs Discord avec un ensemble complet de fonctionnalités de modération, d'administration, de divertissement et d'utilitaires.</p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🛡️ Modération Avancée</h3>
+                    <p>Système complet avec sanctions numérotées, durées personnalisées, et logs automatiques. Support des timeouts Discord et rôles personnalisés.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚙️ Administration Flexible</h3>
+                    <p>Configuration granulaire des logs, annonces personnalisées, et gestion des canaux spécialisés.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🎂 Gestion d'Anniversaires</h3>
+                    <p>Système automatisé de souhaits d'anniversaire avec notifications dans des canaux dédiés.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🎮 Divertissement</h3>
+                    <p>Large gamme de jeux interactifs et commandes de divertissement pour animer votre communauté.</p>
+                </div>
+            </div>
+
+            <h3>🔧 Technologies</h3>
+            <ul>
+                <li><strong>Runtime :</strong> Deno (TypeScript natif)</li>
+                <li><strong>Framework :</strong> Discord.js v14</li>
+                <li><strong>Base de données :</strong> Supabase (PostgreSQL)</li>
+                <li><strong>Déploiement :</strong> Docker</li>
+                <li><strong>CI/CD :</strong> GitHub Actions</li>
+            </ul>
+        </section>
+
+        <section id="installation" class="doc-section">
+            <h2>📥 Installation</h2>
+            
+            <div class="info">
+                <strong>🔗 Lien d'invitation :</strong> <a href="https://discord.com/application-directory/1208555753502412868" target="_blank">Ajouter Kepler à votre serveur</a>
+            </div>
+
+            <h3>Permissions requises</h3>
+            <p>Kepler nécessite les permissions suivantes pour fonctionner correctement :</p>
+            <ul>
+                <li>Lire les messages</li>
+                <li>Envoyer des messages</li>
+                <li>Gérer les messages</li>
+                <li>Intégrer des liens</li>
+                <li>Joindre des fichiers</li>
+                <li>Lire l'historique des messages</li>
+                <li>Utiliser les emojis externes</li>
+                <li>Ajouter des réactions</li>
+                <li>Mentionner @everyone, @here et tous les rôles</li>
+                <li>Bannir des membres</li>
+                <li>Expulser des membres</li>
+                <li>Exclure temporairement des membres</li>
+                <li>Gérer les rôles</li>
+                <li>Gérer les canaux</li>
+            </ul>
+
+            <h3>Configuration initiale</h3>
+            <p>Après avoir ajouté Kepler à votre serveur, utilisez les commandes de configuration suivantes :</p>
+            <div class="code-block">
+/logconfig canal:#logs-général
+/moderationconfig canal:#logs-modération
+/bdayconfig canal:#anniversaires
+            </div>
+        </section>
+
+        <section id="configuration" class="doc-section">
+            <h2>⚙️ Configuration</h2>
+            
+            <h3>Configuration des canaux</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                        <th>Permissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/logconfig</code></td>
+                        <td>Configure le canal pour les logs généraux du serveur</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/moderationconfig</code></td>
+                        <td>Configure le canal pour les logs de modération</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/bdayconfig</code></td>
+                        <td>Configure le canal pour les annonces d'anniversaires</td>
+                        <td>Administrateur</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Configuration du système de mute</h3>
+            <p>Kepler propose un système de mute hybride :</p>
+            <ul>
+                <li><strong>Timeout Discord :</strong> Pour les mutes ≤ 28 jours (par défaut)</li>
+                <li><strong>Rôles personnalisés :</strong> Pour les mutes > 28 jours</li>
+            </ul>
+
+            <div class="code-block">
+# Utiliser un rôle existant
+/muteroleconfig set role:@Muted
+
+# Créer automatiquement un rôle
+/muteroleconfig create nom:"Silencieux"
+
+# Revenir au timeout Discord
+/muteroleconfig disable
+            </div>
+
+            <div class="highlight">
+                <strong>💡 Conseil :</strong> La commande <code>create</code> configure automatiquement les permissions du rôle dans tous les canaux du serveur.
+            </div>
+        </section>
+
+        <section id="moderation" class="doc-section">
+            <h2>🛡️ Système de Modération</h2>
+            
+            <h3>Commandes de sanction</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Syntaxe</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/ban</code></td>
+                        <td><code>/ban utilisateur raison durée suppression_messages</code></td>
+                        <td>Bannir un utilisateur (permanent ou temporaire)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/unban</code></td>
+                        <td><code>/unban user_id raison</code></td>
+                        <td>Débannir un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/kick</code></td>
+                        <td><code>/kick utilisateur raison</code></td>
+                        <td>Expulser un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/mute</code></td>
+                        <td><code>/mute utilisateur durée raison</code></td>
+                        <td>Rendre muet un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/unmute</code></td>
+                        <td><code>/unmute utilisateur raison</code></td>
+                        <td>Annuler le mute d'un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/warn</code></td>
+                        <td><code>/warn utilisateur raison</code></td>
+                        <td>Avertir un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/unwarn</code></td>
+                        <td><code>/unwarn numéro_sanction</code></td>
+                        <td>Supprimer un avertissement</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Commandes d'information</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/modinfo</code></td>
+                        <td>Affiche l'historique de modération d'un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/warnings</code></td>
+                        <td>Liste tous les avertissements d'un utilisateur</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Formats de durée acceptés</h3>
+            <div class="code-block">
+Exemples :
+- 1d = 1 jour
+- 2h = 2 heures  
+- 30m = 30 minutes
+- 1w = 1 semaine
+- 1d12h = 1 jour et 12 heures
+            </div>
+
+            <h3>Système de numérotation</h3>
+            <p>Chaque sanction reçoit un <strong>numéro unique</strong> par serveur :</p>
+            <ul>
+                <li>Numérotation automatique à partir de 1</li>
+                <li>Incrémentation pour chaque nouvelle sanction</li>
+                <li>Référencement facile (ex: "Sanction #42")</li>
+                <li>Affiché dans tous les embeds et logs</li>
+            </ul>
+
+            <h3>Fonctionnalités automatiques</h3>
+            <ul>
+                <li><strong>Débannissement automatique :</strong> Les bans temporaires expirent automatiquement</li>
+                <li><strong>Démute automatique :</strong> Les mutes temporaires sont annulés automatiquement</li>
+                <li><strong>Messages privés :</strong> L'utilisateur sanctionné reçoit un DM avec les détails</li>
+                <li><strong>Logs automatiques :</strong> Toutes les actions sont enregistrées</li>
+            </ul>
+
+            <h3>Sécurité</h3>
+            <div class="warning">
+                <strong>🔒 Règles de sécurité :</strong>
+                <ul>
+                    <li>Les modérateurs ne peuvent pas sanctionner des utilisateurs de rang égal ou supérieur</li>
+                    <li>Impossible de se sanctionner soi-même</li>
+                    <li>Le bot ne peut pas être sanctionné</li>
+                    <li>Vérification des permissions avant chaque action</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="administration" class="doc-section">
+            <h2>⚙️ Administration</h2>
+            
+            <h3>Commandes d'administration</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                        <th>Permissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/annonce</code></td>
+                        <td>Créer une annonce avec embed personnalisé et boutons</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/logconfig</code></td>
+                        <td>Configurer le canal des logs généraux</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/moderationconfig</code></td>
+                        <td>Configurer le canal des logs de modération</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/bdayconfig</code></td>
+                        <td>Configurer le canal des anniversaires</td>
+                        <td>Administrateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/muteroleconfig</code></td>
+                        <td>Configurer le système de mute</td>
+                        <td>Administrateur</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Système d'annonces</h3>
+            <p>La commande <code>/annonce</code> permet de créer des annonces riches avec :</p>
+            <ul>
+                <li>Titre et message personnalisés</li>
+                <li>Couleurs prédéfinies ou hexadécimales</li>
+                <li>Images et miniatures</li>
+                <li>Jusqu'à 5 boutons avec liens externes</li>
+                <li>Emojis personnalisés sur les boutons</li>
+            </ul>
+
+            <div class="code-block">
+Exemple :
+/annonce titre:"Nouvelle mise à jour !" message:"Découvrez les nouvelles fonctionnalités" couleur:Bleu bouton1_texte:"En savoir plus" bouton1_lien:"https://example.com"
+            </div>
+        </section>
+
+        <section id="utilitaires" class="doc-section">
+            <h2>🔧 Commandes Utilitaires</h2>
+            
+            <h3>Informations sur le serveur</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/serverinfo</code></td>
+                        <td>Informations complètes du serveur (membres, canaux, rôles, boosts)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/userinfo</code></td>
+                        <td>Informations détaillées d'un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/roleinfo</code></td>
+                        <td>Informations sur un rôle spécifique</td>
+                    </tr>
+                    <tr>
+                        <td><code>/rolelist</code></td>
+                        <td>Liste tous les rôles du serveur avec le nombre de membres</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outils pratiques</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/genpass</code></td>
+                        <td>Génère un mot de passe sécurisé</td>
+                    </tr>
+                    <tr>
+                        <td><code>/minecraft-uuid</code></td>
+                        <td>Récupère l'UUID d'un joueur Minecraft</td>
+                    </tr>
+                    <tr>
+                        <td><code>/reminder</code></td>
+                        <td>Crée un rappel personnalisé</td>
+                    </tr>
+                    <tr>
+                        <td><code>/wowguilde</code></td>
+                        <td>Informations sur une guilde World of Warcraft</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Intégration World of Warcraft</h3>
+            <p>La commande <code>/wowguilde</code> permet d'obtenir des informations détaillées sur une guilde WoW :</p>
+            <ul>
+                <li>Progression en raid (Normal, Héroïque, Mythique)</li>
+                <li>Classements mondiaux, régionaux et de serveur</li>
+                <li>Support des régions EU, US, KR, TW</li>
+            </ul>
+
+            <div class="code-block">
+Exemple :
+/wowguilde serveur:"Hyjal" guilde:"Sanctuary" region:eu
+            </div>
+        </section>
+
+        <section id="jeux" class="doc-section">
+            <h2>🎮 Jeux et Divertissement</h2>
+            
+            <h3>Jeux classiques</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/coinflip</code></td>
+                        <td>Lance une pièce (pile ou face)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/chifoumi</code></td>
+                        <td>Pierre-papier-ciseaux contre le bot</td>
+                    </tr>
+                    <tr>
+                        <td><code>/8ball</code></td>
+                        <td>Boule magique pour répondre aux questions</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Jeux avancés</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/puissance4</code></td>
+                        <td>Puissance 4 contre le bot ou un autre joueur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/golem</code></td>
+                        <td>Crée un golem virtuel personnalisé</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Divertissement</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/blague</code></td>
+                        <td>Raconte une blague aléatoire avec plusieurs catégories</td>
+                    </tr>
+                    <tr>
+                        <td><code>/meme</code></td>
+                        <td>Affiche un meme aléatoire</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Système de blagues</h3>
+            <p>La commande <code>/blague</code> propose plusieurs catégories :</p>
+            <ul>
+                <li><strong>Global :</strong> Blagues de tout type</li>
+                <li><strong>Dev :</strong> Blagues de développeurs</li>
+                <li><strong>Dark :</strong> Humour noir</li>
+                <li><strong>Limit :</strong> Blagues limites</li>
+                <li><strong>Beauf :</strong> Humour beauf</li>
+                <li><strong>Blondes :</strong> Blagues de blondes</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>🎮 Puissance 4 :</strong> Le jeu supporte les parties contre le bot avec une IA intelligente, ou contre d'autres joueurs avec un système interactif de boutons.
+            </div>
+        </section>
+
+        <section id="anniversaires" class="doc-section">
+            <h2>🎂 Système d'Anniversaires</h2>
+            
+            <h3>Gestion des anniversaires</h3>
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Commande</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/birthday set</code></td>
+                        <td>Définir son anniversaire (jour, mois, année optionnelle)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/birthday get</code></td>
+                        <td>Voir l'anniversaire d'un utilisateur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/birthday remove</code></td>
+                        <td>Supprimer son anniversaire</td>
+                    </tr>
+                    <tr>
+                        <td><code>/birthday list</code></td>
+                        <td>Voir tous les anniversaires du serveur</td>
+                    </tr>
+                    <tr>
+                        <td><code>/birthday celebrate</code></td>
+                        <td>Souhaiter un joyeux anniversaire à quelqu'un</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Fonctionnalités automatiques</h3>
+            <ul>
+                <li><strong>Vérification quotidienne :</strong> Le bot vérifie automatiquement les anniversaires chaque jour</li>
+                <li><strong>Notifications personnalisées :</strong> Messages d'anniversaire dans le canal configuré</li>
+                <li><strong>Gestion des fuseaux horaires :</strong> Annonces à minuit</li>
+                <li><strong>Historique :</strong> Conservation des anniversaires jusqu'à suppression manuelle</li>
+            </ul>
+
+            <h3>Configuration</h3>
+            <div class="code-block">
+# Configurer le canal d'anniversaires
+/bdayconfig canal:#anniversaires
+
+# Les membres peuvent ensuite définir leur anniversaire
+/birthday set jour:15 mois:8 année:1990
+            </div>
+
+            <div class="info">
+                <strong>🔒 Confidentialité :</strong> L'année de naissance est optionnelle et ne sera pas affichée publiquement si elle n'est pas renseignée.
+            </div>
+        </section>
+
+        <section id="logs" class="doc-section">
+            <h2>📊 Système de Logs</h2>
+            
+            <h3>Types de logs</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📝 Logs généraux</h4>
+                    <ul>
+                        <li>Création/suppression de canaux</li>
+                        <li>Modifications de serveur</li>
+                        <li>Gestion des rôles</li>
+                        <li>Invitations</li>
+                        <li>Emojis et stickers</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>💬 Logs de messages</h4>
+                    <ul>
+                        <li>Suppression de messages</li>
+                        <li>Modification de messages</li>
+                        <li>Suppression en masse</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>👥 Logs de membres</h4>
+                    <ul>
+                        <li>Arrivée/départ de membres</li>
+                        <li>Modifications de profil</li>
+                        <li>Changements de statut vocal</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🛡️ Logs de modération</h4>
+                    <ul>
+                        <li>Bannissements/débannissements</li>
+                        <li>Expulsions</li>
+                        <li>Mutes/démutes</li>
+                        <li>Avertissements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Structure des événements</h3>
+            <p>Le système de logs est organisé en plusieurs couches :</p>
+            <ul>
+                <li><strong>Handlers :</strong> Gestionnaires d'événements Discord</li>
+                <li><strong>Logs :</strong> Fonctions de logging réutilisables</li>
+                <li><strong>Core :</strong> Événements fondamentaux du bot</li>
+            </ul>
+
+            <h3>Configuration des logs</h3>
+            <div class="code-block">
+# Logs généraux (canaux, rôles, membres, etc.)
+/logconfig canal:#logs-général
+
+# Logs de modération spécifiques
+/moderationconfig canal:#logs-modération
+            </div>
+
+            <div class="highlight">
+                <strong>💡 Conseil :</strong> Séparez les logs de modération des logs généraux pour une meilleure organisation et lisibilité.
+            </div>
+        </section>
+
+        <section id="techniques" class="doc-section">
+            <h2>🔧 Informations Techniques</h2>
+            
+            <h3>Architecture du bot</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🏗️ Structure du projet</h4>
+                    <ul>
+                        <li><strong>commands/</strong> - Commandes organisées par catégorie</li>
+                        <li><strong>events/</strong> - Gestionnaires d'événements</li>
+                        <li><strong>database/</strong> - Gestion base de données</li>
+                        <li><strong>utils/</strong> - Utilitaires et helpers</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>💾 Base de données</h4>
+                    <ul>
+                        <li>Supabase (PostgreSQL)</li>
+                        <li>Tables : configurations, modération, anniversaires</li>
+                        <li>Sauvegarde automatique</li>
+                        <li>Migrations versionnées</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🚀 Déploiement</h4>
+                    <ul>
+                        <li>Docker containerisé</li>
+                        <li>CI/CD avec GitHub Actions</li>
+                        <li>Monitoring automatique</li>
+                        <li>Redémarrages automatiques</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔐 Sécurité</h4>
+                    <ul>
+                        <li>Variables d'environnement</li>
+                        <li>Validation des permissions</li>
+                        <li>Limitation des taux</li>
+                        <li>Logs d'audit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Chargement des commandes</h3>
+            <p>Le système charge automatiquement toutes les commandes de manière récursive :</p>
+            <div class="code-block">
+Structure des commandes :
+commands/
+├── administration/    # Commandes d'admin
+├── moderation/       # Commandes de modération
+├── utilitaires/      # Outils pratiques
+├── games/           # Jeux et divertissement
+└── general/         # Commandes générales
+            </div>
+
+            <h3>Gestionnaires automatiques</h3>
+            <ul>
+                <li><strong>BirthdayManager :</strong> Vérification quotidienne des anniversaires</li>
+                <li><strong>ModerationManager :</strong> Expiration automatique des sanctions temporaires</li>
+                <li><strong>Event Handlers :</strong> Logging automatique de tous les événements Discord</li>
+            </ul>
+
+            <h3>Performances</h3>
+            <ul>
+                <li><strong>TypeScript natif :</strong> Pas de transpilation, exécution directe</li>
+                <li><strong>Deno runtime :</strong> Sécurité et performance optimisées</li>
+                <li><strong>Cache intelligent :</strong> Mise en cache des données fréquemment utilisées</li>
+                <li><strong>Connexions persistantes :</strong> Pool de connexions à la base de données</li>
+            </ul>
+
+            <h3>Monitoring et debugging</h3>
+            <div class="code-block">
+# Logs disponibles
+- Chargement des commandes
+- Connexions/déconnexions
+- Erreurs et exceptions
+- Actions de modération
+- Statistiques d'utilisation
+            </div>
+        </section>
+
+        <section id="roadmap" class="doc-section">
+            <h2>🛠️ Roadmap et Développement</h2>
+            
+            <h3>✅ Version Alpha (Terminée)</h3>
+            <ul>
+                <li>Passage complet en TypeScript</li>
+                <li>Système de modération avancé</li>
+                <li>Migration vers Supabase</li>
+                <li>Système d'anniversaires</li>
+                <li>Logs de modération configurables</li>
+            </ul>
+
+            <h3>🔄 Version Beta (En cours - Été 2025)</h3>
+            <ul>
+                <li>Optimisations des performances</li>
+                <li>Nouvelles commandes de divertissement</li>
+                <li>Système de niveaux et XP</li>
+                <li>Amélioration de la stabilité</li>
+            </ul>
+
+            <h3>🚀 Version Release (Été 2025)</h3>
+            <ul>
+                <li>Interface web de configuration</li>
+                <li>API publique pour développeurs</li>
+                <li>Plugins communautaires</li>
+                <li>Intégrations tierces étendues</li>
+            </ul>
+
+            <h3>🤝 Contribution</h3>
+            <div class="info">
+                <strong>💬 Serveur Discord :</strong> <a href="https://discord.gg/GbavRtUwad" target="_blank">Rejoignez notre communauté</a><br>
+                <strong>🐛 Issues :</strong> <a href="https://github.com/Antoww/kepler-bot/issues" target="_blank">Signaler un bug sur GitHub</a><br>
+                <strong>💡 Suggestions :</strong> Partagez vos idées sur notre serveur Discord
+            </div>
+        </section>
+
+        <section id="faq" class="doc-section">
+            <h2>❓ Questions Fréquentes</h2>
+            
+            <h3>Le bot ne répond pas à mes commandes</h3>
+            <ul>
+                <li>Vérifiez que le bot a les permissions nécessaires</li>
+                <li>Assurez-vous d'utiliser les commandes slash (<code>/</code>)</li>
+                <li>Le bot est peut-être en maintenance (version Beta)</li>
+            </ul>
+
+            <h3>Comment configurer les logs de modération ?</h3>
+            <div class="code-block">
+/moderationconfig canal:#votre-canal-de-logs
+            </div>
+
+            <h3>Le système de mute ne fonctionne pas</h3>
+            <ul>
+                <li>Vérifiez la configuration avec <code>/muteroleconfig</code></li>
+                <li>Assurez-vous que le bot peut gérer le rôle de mute</li>
+                <li>Pour les mutes >28j, un rôle personnalisé est requis</li>
+            </ul>
+
+            <h3>Les anniversaires ne sont pas annoncés</h3>
+            <ul>
+                <li>Configurez le canal avec <code>/bdayconfig</code></li>
+                <li>Vérifiez que les membres ont bien défini leur anniversaire</li>
+                <li>Le bot vérifie les anniversaires à minuit</li>
+            </ul>
+
+            <h3>Comment supprimer une sanction ?</h3>
+            <div class="code-block">
+# Pour un avertissement
+/unwarn numéro_sanction:42
+
+# Pour un ban temporaire
+/unban user_id:"123456789" raison:"Appel accepté"
+            </div>
+        </section>
+
+        <footer class="doc-section" style="text-align: center; background: #f8f9fa;">
+            <h3>🚀 Kepler Bot</h3>
+            <p>Développé avec ❤️ par <a href="https://github.com/Antoww" target="_blank">Antow</a> pour la communauté Discord française</p>
+            <p><strong>Version Beta - Été 2025</strong></p>
+            <div style="margin-top: 20px;">
+                <a href="https://discord.com/application-directory/1208555753502412868" target="_blank" style="margin: 0 10px;">🤖 Ajouter le bot</a>
+                <a href="https://discord.gg/GbavRtUwad" target="_blank" style="margin: 0 10px;">💬 Serveur Discord</a>
+                <a href="https://github.com/Antoww/kepler-bot" target="_blank" style="margin: 0 10px;">📖 Code source</a>
+            </div>
+        </footer>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
+
+    <script>
+        // Afficher/masquer le bouton "Retour en haut"
+        window.onscroll = function() {
+            const button = document.getElementById('backToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+
+        // Fonction pour remonter en haut
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Smooth scroll pour les liens de navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
